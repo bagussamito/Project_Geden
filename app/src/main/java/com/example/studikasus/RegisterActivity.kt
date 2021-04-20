@@ -51,7 +51,7 @@ class RegisterActivity : AppCompatActivity() {
                         startActivity(it)
                     }
                 } else {
-                    Toast.makeText(this, it.exception.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
 
