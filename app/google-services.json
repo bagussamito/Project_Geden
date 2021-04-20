@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994141038181",
+    "project_id": "studikasus-ceacc",
+    "storage_bucket": "studikasus-ceacc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994141038181:android:e36327b9ebad3c4b2a088c",
+        "android_client_info": {
+          "package_name": "com.example.studikasus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994141038181-a0hif0d8bjvsdoim2h93d4a2jpm2i871.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdf-L5zMHaE-3dm-ZutD-ddQ7HpqPjeQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994141038181-a0hif0d8bjvsdoim2h93d4a2jpm2i871.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
