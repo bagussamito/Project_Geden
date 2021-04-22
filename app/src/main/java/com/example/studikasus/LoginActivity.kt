@@ -4,22 +4,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.btnRegister
-import kotlinx.android.synthetic.main.activity_login.etEmail
-import kotlinx.android.synthetic.main.activity_login.etPassword
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var btnBlmPnyAkun: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance()
+        btnBlmPnyAkun = findViewById(R.id.textView3)
 
         btnLogin.setOnClickListener() {
             val email = etEmail.text.toString().trim()
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                etEmail.error = "Email harus Diisi"
+                etEmail.error = "Email Salah"
                 etEmail.requestFocus()
                 return@setOnClickListener
             }
@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
             loginUser(email, password)
         }
 
-        btnRegister.setOnClickListener() {
+        btnBlmPnyAkun.setOnClickListener() {
             Intent(this@LoginActivity, RegisterActivity::class.java).also {
                 startActivity(it)
             }
