@@ -14,6 +14,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        auth = FirebaseAuth.getInstance()
+
         btnLogout.setOnClickListener() {
             auth.signOut()
             Intent(this@HomeActivity, LoginActivity::class.java).also {
