@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="@color/unselected">
+
+    <item
+        android:id="@+id/nav_beranda"
+        android:icon="@drawable/ic_home"
+        android:title="Beranda"
+        app:cnb_iconColor="@color/home"/>
+
+    <item
+        android:id="@+id/nav_laporan"
+        android:icon="@drawable/ic_document"
+        android:title="Laporan"
+        app:cnb_iconColor="@color/laporan"/>
+
+    <item
+        android:id="@+id/nav_setelan"
+        android:icon="@drawable/ic_setting"
+        android:title="Setelan"
+        app:cnb_iconColor="@color/setelan"/>
+
+</menu>
