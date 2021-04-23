@@ -53,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
                 etPassword.requestFocus()
                 return@setOnClickListener
             }
-            if (verifpassword.isEmpty() || verifpassword !== password) {
+            if (verifpassword.isEmpty() || verifpassword != password) {
                 etPassword.error = "Password harus sama"
                 etPassword.requestFocus()
                 return@setOnClickListener

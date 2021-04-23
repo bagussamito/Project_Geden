@@ -7,10 +7,15 @@ import android.util.Patterns
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
+
+    private lateinit var berandaNav: BerandaFragment
+    private lateinit var setelanNav: SetelanFragment
     private lateinit var auth: FirebaseAuth
     private lateinit var btnBlmPnyAkun: TextView
 
