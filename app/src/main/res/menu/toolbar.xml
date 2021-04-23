@@ -9,5 +9,5 @@
         android:title="Logout"
         app:cnb_iconColor="@color/home" />
 
-
+    
 </menu>

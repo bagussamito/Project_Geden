@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
-import kotlinx.android.synthetic.main.activity_home.*
-import kotlin.system.exitProcess
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var bottomNav: ChipNavigationBar
     private lateinit var setelanNav: SetelanFragment
-    private lateinit var tblogout : Toolbar
+    private lateinit var tbMenu : Toolbar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,19 +22,18 @@ class HomeActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         bottomNav = findViewById<ChipNavigationBar>(R.id.bottom_nav)
+        tbMenu = findViewById(R.id.tbmenu)
+
 
         bottomNav.setItemSelected(R.id.nav_beranda, isSelected = true)
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, BerandaFragment()).commit()
 
-        bottomMenu()
-
-        tblogout = findViewById(R.id.toolbarLogout)
-
-        tblogout.setOnClickListener(){
+       /* tblogout.setOnClickListener(){
             val intent = Intent (this@HomeActivity, LoginActivity::class.java)
             startActivity(intent)
-        }
+        } */
 
+        bottomMenu()
     }
 
 
