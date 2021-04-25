@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.StudiKasus" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StudiKasus" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/home</item>
-        <item name="colorPrimaryVariant">@color/textcolor2</item>
+        <item name="colorPrimaryVariant">@color/color_transparan</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/background</item>

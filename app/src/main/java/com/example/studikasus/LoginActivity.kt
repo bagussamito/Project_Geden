@@ -6,16 +6,18 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
+import com.example.studikasus.fragments.BerandaFragment
+import com.example.studikasus.fragments.SetelanFragment
 import com.google.firebase.auth.FirebaseAuth
-import com.ismaeldivita.chipnavigation.ChipNavigationBar
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-
-    private lateinit var berandaNav: BerandaFragment
-    private lateinit var setelanNav: SetelanFragment
+    private lateinit var berandaFragment: BerandaFragment
+    private lateinit var setelanFragment: SetelanFragment
+    private lateinit var activeFragment: Fragment
     private lateinit var auth: FirebaseAuth
     private lateinit var btnBlmPnyAkun: TextView
 
@@ -25,6 +27,8 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         btnBlmPnyAkun = findViewById(R.id.textView3)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         btnLogin.setOnClickListener() {
             val email = etEmail.text.toString().trim()
@@ -60,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loginUser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {
-                Intent(this@LoginActivity, HomeActivity::class.java).also {
+                Intent(this@LoginActivity, MainActivity::class.java).also {
                     it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(it)
                 }
@@ -69,10 +73,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
     override fun onStart() {
         super.onStart()
         if (auth.currentUser != null) {
-            Intent (this@LoginActivity, HomeActivity::class.java).also {
+            Intent(this@LoginActivity, MainActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }

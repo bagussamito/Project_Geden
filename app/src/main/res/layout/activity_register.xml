@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF3F3"
-    android:foregroundTint="#FFFFFF"
+    android:background="@drawable/gradient_start"
+    android:id="@+id/register_layout"
     tools:context=".RegisterActivity">
 
     <ImageView

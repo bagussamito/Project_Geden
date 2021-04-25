@@ -1,17 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.StudiKasus" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StudiKasus" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#866374</item>
-        <item name="colorPrimaryVariant">#37474F</item>
+        <item name="colorPrimaryVariant">@color/color_transparan</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#37474F</item>
         <item name="colorSecondaryVariant">#866374</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#866374</item>
         <!-- Customize your theme here. -->
         <item name="color">#866374</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/optionmenuu</item>
+    </style>
+
+    <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="optionmenuu" parent="android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_baseline_more_vert_24</item>
     </style>
 </resources>
