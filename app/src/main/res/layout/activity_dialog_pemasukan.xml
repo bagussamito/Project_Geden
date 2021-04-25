@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/home"
-    android:backgroundTint="@color/home">
+    android:backgroundTint="@color/home"
+    android:id="@+id/dialog_pemasukan"
+    tools:context=".DialogActivity">
 
     <TextView
         android:id="@+id/textView9"
