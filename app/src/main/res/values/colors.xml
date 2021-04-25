@@ -17,4 +17,9 @@
     <color name="beranda_header">#2F866374</color>
 
     <color name="fab">#B7889E</color>
+    <color name="fab_pemasukan">#B78888</color>
+    <color name="fab_pengeluaran">#9488B7</color>
+
+    <color name="pengeluaran_bg">#816386</color>
+    <color name="simpanan_bg">#638679</color>
 </resources>

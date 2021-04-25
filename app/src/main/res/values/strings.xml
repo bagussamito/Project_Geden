@@ -5,4 +5,10 @@
     <string name="Setelan">Setelan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="kategori_pemasukan">
+        <item>Gaji</item>
+        <item>Bonus</item>
+        <item>Lainnya</item>
+    </string-array>
 </resources>

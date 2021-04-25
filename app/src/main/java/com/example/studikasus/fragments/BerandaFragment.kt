@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import com.example.studikasus.CustomDialogFragment
 import com.example.studikasus.R
 import kotlinx.android.synthetic.main.fragment_beranda.*
 
@@ -37,7 +38,8 @@ class BerandaFragment : Fragment() {
             onButtonClicked()
         }
         fab_pemasukan.setOnClickListener {
-            Toast.makeText(context, "Pemasukan", Toast.LENGTH_SHORT).show()
+            var dialog = CustomDialogFragment()
+
         }
         fab_pengeluaran.setOnClickListener {
             Toast.makeText(context, "Pengeluaran", Toast.LENGTH_SHORT).show()
