@@ -61,12 +61,6 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
             etNominal.error = "Isi Nominal!"
             return
         }
-        if (deskripsi.isEmpty()){
-            etDeskripsi.error = "Isi Deskripsi!"
-        }
-        if (kategori.isEmpty()){
-
-        }
 
         val refpemasukan = FirebaseDatabase.getInstance().getReference("Pemasukan")
 

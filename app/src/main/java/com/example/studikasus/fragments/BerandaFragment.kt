@@ -30,7 +30,8 @@ class BerandaFragment : Fragment() {
         val jmlPemasukan = view.findViewById(R.id.jml_pemasukan) as TextView
         val jmlPengeluaran = view.findViewById(R.id.jml_pengeluaran) as TextView
         val jmlSimpanan = view.findViewById(R.id.jml_simpanan) as TextView
-        var DBPemasukan = view as DatabaseReference
+        var DBPemasukan : DatabaseReference
+        var DBPengeluaran : DatabaseReference
 
         DBPemasukan = FirebaseDatabase.getInstance().reference.child("Pemasukan")
 
@@ -44,6 +45,24 @@ class BerandaFragment : Fragment() {
                     val pValue: Int = java.lang.String.valueOf(nominal).toInt()
                     sum += pValue
                     jmlPemasukan.setText(sum.toString())
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+
+        DBPengeluaran = FirebaseDatabase.getInstance().reference.child("Pengeluaran")
+
+        DBPengeluaran.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var sum = 0
+                for (ds in dataSnapshot.children) {
+                    val map: Map<String, Any>? =
+                        ds.value as Map<String, Any>?
+                    val nominal = map!!["nominal"]
+                    val pValue: Int = java.lang.String.valueOf(nominal).toInt()
+                    sum += pValue
+                    jmlPengeluaran.setText(sum.toString())
                 }
             }
 
