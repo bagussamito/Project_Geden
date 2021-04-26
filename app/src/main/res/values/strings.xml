@@ -11,4 +11,15 @@
         <item>Bonus</item>
         <item>Lainnya</item>
     </string-array>
+
+    <string-array name="kategori_pengeluaran">
+        <item>Belanja Umum</item>
+        <item>Transportasi</item>
+        <item>Makanan</item>
+        <item>Tagihan Listrik</item>
+        <item>Kuota Internet</item>
+        <item>Pulsa</item>
+        <item>Tagihan Air</item>
+        <item>Lainnya</item>
+    </string-array>
 </resources>

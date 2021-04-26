@@ -26,7 +26,11 @@
     </style>
     
     <style name="custom_fab">
-        <item name="android:textColor">@color/white</item>
         <item name="background">@drawable/custom_fab</item>
+    </style>
+
+    <style name="Theme.StudiKasus.NoActionBar" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

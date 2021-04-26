@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
+        //verifikasi email dan password
         btnLogin.setOnClickListener() {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -50,9 +51,11 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            //fungsi verifikasi login user firebase
             loginUser(email, password)
         }
 
+        //intent menuju RegisterActivity.kt
         btnBlmPnyAkun.setOnClickListener() {
             Intent(this@LoginActivity, RegisterActivity::class.java).also {
                 startActivity(it)
@@ -61,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    //fungsi verifikasi login user firebase
     private fun loginUser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fab_pemasukan"
-    android:backgroundTint="@color/fab_pemasukan"
+    android:background="@color/fab_pengeluaran"
+    android:backgroundTint="@color/fab_pengeluaran"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:context=".DialogPengeluaranActivity">
 
@@ -36,7 +36,7 @@
         android:id="@+id/tv_kategori_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins"
         android:text="Spinner"
@@ -86,7 +86,7 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="Isi nominal pemasukan disini"
+        android:hint="Isi nominal pengeluaran disini"
         android:inputType="number"
         android:shadowColor="@color/white"
         android:textColor="@color/white"
@@ -104,12 +104,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="60dp"
-        android:entries="@array/kategori_pemasukan"
+        android:entries="@array/kategori_pengeluaran"
         app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pengeluaran"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <TextView
         android:id="@+id/textView15"
@@ -119,7 +120,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="124dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Nominal Pemasukan"
+        android:text="Nominal Pengeluaran"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,24 +140,26 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <Button
         android:id="@+id/btn_Kirim_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
-        android:layout_marginTop="320dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="18dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
         android:text="Kirim"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
 </androidx.constraintlayout.widget.ConstraintLayout>

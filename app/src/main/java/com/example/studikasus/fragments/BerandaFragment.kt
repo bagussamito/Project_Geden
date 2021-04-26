@@ -6,24 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.ImageButton
-import android.widget.Toast
-import com.example.studikasus.DialogActivity
-import com.example.studikasus.LoginActivity
+import com.example.studikasus.DialogPemasukanActivity
+import com.example.studikasus.DialogPengeluaranActivity
 import com.example.studikasus.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_beranda.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class BerandaFragment : Fragment() {
-
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,20 +21,16 @@ class BerandaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_beranda, container, false)
-
-        val option_pemasukan = view.findViewById(R.id.option_pemasukan) as ImageButton
-        option_pemasukan.setOnClickListener {
-            val i = Intent(activity, DialogActivity::class.java)
+        val pemasukan_btn = view.findViewById(R.id.fab_pemasukan) as com.getbase.floatingactionbutton.FloatingActionButton
+        val pengeluaran_btn = view.findViewById(R.id.fab_pengeluaran) as com.getbase.floatingactionbutton.FloatingActionButton
+        pemasukan_btn.setOnClickListener {
+            val i = Intent(activity, DialogPemasukanActivity::class.java)
+            startActivity(i)
+        }
+        pengeluaran_btn.setOnClickListener {
+            val i = Intent(activity, DialogPengeluaranActivity::class.java)
             startActivity(i)
         }
         return view
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-
-    }
-
-
 }
