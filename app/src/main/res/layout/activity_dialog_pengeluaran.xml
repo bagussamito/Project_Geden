@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fab_pengeluaran"
     android:backgroundTint="@color/fab_pengeluaran"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:theme="@style/Theme.StudiKasus.NoActionBar"
     tools:context=".DialogPengeluaranActivity">
 
     <EditText
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_kategori_pemasukan"
+        android:id="@+id/tv_kategori_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -131,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="188dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="92dp"
         android:layout_marginBottom="18dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
@@ -142,14 +142,14 @@
         app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.978" />
 
     <Button
         android:id="@+id/btn_Kirim_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="4dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
         android:text="Kirim"
@@ -159,5 +159,5 @@
         app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.933" />
 </androidx.constraintlayout.widget.ConstraintLayout>

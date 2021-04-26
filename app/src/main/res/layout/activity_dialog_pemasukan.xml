@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fab_pemasukan"
     android:backgroundTint="@color/fab_pemasukan"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:theme="@style/Theme.StudiKasus.NoActionBar"
     tools:context=".DialogPemasukanActivity">
 
     <EditText

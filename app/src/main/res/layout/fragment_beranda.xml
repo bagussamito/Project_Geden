@@ -197,15 +197,19 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_pemasukan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:fab_icon="@drawable/ic_add_pemasukan"/>
+                android:id="@+id/fab_pemasukan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_size="mini"
+                app:fab_colorNormal="@color/fab_pemasukan"
+                app:fab_icon="@drawable/ic_add_pemasukan"/>
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_pengeluaran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:fab_size="mini"
+                    app:fab_colorNormal="@color/fab_pengeluaran"
                     app:fab_icon="@drawable/ic_add_pengeluaran"/>
 
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
