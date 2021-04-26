@@ -11,15 +11,19 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
     lateinit var tvkategoriPemasukan : TextView
     lateinit var btnBatal : Button
     lateinit var btnKirim : Button
+    lateinit var etNominal : EditText
+    lateinit var etDeskripsi : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dialog_pemasukan)
 
-        optionPemasukan = findViewById(R.id.kategori_pengeluaran)
-        tvkategoriPemasukan = findViewById(R.id.tv_kategori_pengeluaran)
-        btnBatal = findViewById(R.id.btn_Cancel_pengeluaran)
-        btnKirim = findViewById(R.id.btn_Kirim_pengeluaran)
+        optionPemasukan = findViewById(R.id.kategori_pemasukan)
+        tvkategoriPemasukan = findViewById(R.id.tv_kategori_pemasukan)
+        etNominal = findViewById(R.id.et_nominal_pemasukan)
+        etDeskripsi = findViewById(R.id.et_deskripsi_pemasukan)
+        btnBatal = findViewById(R.id.btn_Cancel_pemasukan)
+        btnKirim = findViewById(R.id.btn_Kirim_pemasukan)
 
         val adapter: ArrayAdapter<*> = ArrayAdapter.createFromResource(
             this,
@@ -34,6 +38,9 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
         btnBatal.setOnClickListener {
             finish()
         }
+        btnKirim.setOnClickListener {
+            saveData()
+        }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -42,5 +49,21 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
 
     override fun onItemSelected(adapterView: AdapterView<*>, view: View, position: Int, id: Long) {
         Toast.makeText(this, adapterView.selectedItem.toString(), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun saveData(){
+        val nominal = etNominal.text.toString().trim()
+        val deskripsi = etDeskripsi.text.toString().trim()
+        val kategori = optionPemasukan.selectedItem.toString().trim()
+
+        if (nominal.isEmpty()){
+            etNominal.error = "Isi Nominal!"
+            return
+        }
+        if (deskripsi.isEmpty()){
+            etDeskripsi.error = "Isi Deskripsi!"
+        }
+
+        //val ref = FirebaseDatabase.getInstance().getReference("Pemasukan")
     }
 }

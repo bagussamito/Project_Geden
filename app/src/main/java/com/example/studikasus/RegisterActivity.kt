@@ -27,13 +27,11 @@ class RegisterActivity : AppCompatActivity() {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        //intent menuju LoginActivity.kt ketika sudah punya akun yg terdaftar di Firebase
         btnPnyAkun.setOnClickListener() {
             val intent = Intent (this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        //verifikasi username, email, password
         btnRegister.setOnClickListener {
             val username = etUsername.text.toString().trim()
             val email = etEmail.text.toString().trim()
@@ -66,12 +64,10 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //fungsi verifikasi register user firebase
             registerUser(email, password)
         }
     }
 
-    //fungsi verifikasi register user firebase
     private fun registerUser( email: String, password: String) {
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){

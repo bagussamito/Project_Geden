@@ -193,8 +193,6 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 app:fab_addButtonColorNormal="@color/fab"
-                app:fab_addButtonColorPressed="@color/home"
-                app:fab_labelStyle="@style/custom_fab"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
@@ -202,21 +200,13 @@
                     android:id="@+id/fab_pemasukan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:fab_title="Pemasukan"
-                    app:fab_icon="@drawable/ic_add_pemasukan"
-                    app:fab_size="mini"
-                    app:fab_colorNormal="@color/fab_pemasukan"
-                    app:fab_colorPressed="@color/home"/>
+                    app:fab_icon="@drawable/ic_add_pemasukan"/>
 
                 <com.getbase.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_pengeluaran"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:fab_title="Pengeluaran"
-                    app:fab_icon="@drawable/ic_add_pengeluaran"
-                    app:fab_size="mini"
-                    app:fab_colorNormal="@color/fab_pengeluaran"
-                    app:fab_colorPressed="@color/home"/>
+                    app:fab_icon="@drawable/ic_add_pengeluaran"/>
 
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

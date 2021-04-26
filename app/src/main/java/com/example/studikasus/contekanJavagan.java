@@ -16,7 +16,7 @@ public class contekanJavagan extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner option_pemasukan = findViewById(R.id.kategori_pengeluaran);
+        Spinner option_pemasukan = findViewById(R.id.kategori_pemasukan);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.kategori_pemasukan, R.layout.color_spinner_layout);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         option_pemasukan.setAdapter(adapter);

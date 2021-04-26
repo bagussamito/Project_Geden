@@ -14,12 +14,12 @@ class DialogPengeluaranActivity : AppCompatActivity(), AdapterView.OnItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dialog_pengeluaran)
+        setContentView(R.layout.activity_dialog_pemasukan)
 
-        optionPengeluaran = findViewById(R.id.kategori_pengeluaran)
-        tvkategoriPengeluaran = findViewById(R.id.tv_kategori_pengeluaran)
-        btnBatal = findViewById(R.id.btn_Cancel_pengeluaran)
-        btnKirim = findViewById(R.id.btn_Kirim_pengeluaran)
+        optionPengeluaran = findViewById(R.id.kategori_pemasukan)
+        tvkategoriPengeluaran = findViewById(R.id.tv_kategori_pemasukan)
+        btnBatal = findViewById(R.id.btn_Cancel_pemasukan)
+        btnKirim = findViewById(R.id.btn_Kirim_pemasukan)
 
         val adapter: ArrayAdapter<*> = ArrayAdapter.createFromResource(
             this,

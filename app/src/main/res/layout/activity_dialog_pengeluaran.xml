@@ -33,10 +33,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_kategori_pengeluaran"
+        android:id="@+id/tv_kategori_pemasukan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins"
         android:text="Spinner"
@@ -105,12 +105,11 @@
         android:layout_marginStart="44dp"
         android:layout_marginEnd="60dp"
         android:entries="@array/kategori_pengeluaran"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pengeluaran"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pemasukan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <TextView
         android:id="@+id/textView15"
@@ -140,10 +139,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
-        app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <Button
         android:id="@+id/btn_Kirim_pengeluaran"
@@ -151,15 +150,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="18dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
         android:text="Kirim"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
-        app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.877" />
 </androidx.constraintlayout.widget.ConstraintLayout>

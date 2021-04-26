@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,12 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        //fungsi untuk memanggil tab layout
         setUpTabs()
 
     }
 
-    //fungsi untuk menyusun tab layout
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(BerandaFragment(), "Beranda")
@@ -45,14 +44,13 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(2)!!.setIcon(R.drawable.ic_setting)
     }
 
-    //method untuk membuat option menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
-    //method untuk memberi action ketika item menu dipilih (kasus logout)
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
         if (item.itemId == R.id.logout) {

@@ -11,20 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudiKasus">
-        <activity android:name=".contekanJavagan"></activity>
         <activity
-            android:name=".DialogPengeluaranActivity"
-            android:theme="@style/Theme.StudiKasus.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:name=".DialogPemasukanActivity"/>
         <activity
-            android:name=".DialogPemasukanActivity"
-            android:theme="@style/Theme.StudiKasus.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:name=".DialogPengeluaranActivity"/>
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".LoginActivity"/>
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".RegisterActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">

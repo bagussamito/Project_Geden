@@ -7,10 +7,10 @@
     android:background="@color/fab_pemasukan"
     android:backgroundTint="@color/fab_pemasukan"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context=".DialogPengeluaranActivity">
+    tools:context=".DialogPemasukanActivity">
 
     <EditText
-        android:id="@+id/et_deskripsi_pengeluaran"
+        android:id="@+id/et_deskripsi_pemasukan"
         android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -33,10 +33,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_kategori_pengeluaran"
+        android:id="@+id/tv_kategori_pemasukan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins"
         android:text="Spinner"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_nominal_pengeluaran"
+        android:id="@+id/et_nominal_pemasukan"
         android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -99,17 +99,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/kategori_pengeluaran"
+        android:id="@+id/kategori_pemasukan"
         android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="60dp"
         android:entries="@array/kategori_pemasukan"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pengeluaran"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pemasukan"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <TextView
         android:id="@+id/textView15"
@@ -127,7 +128,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_Cancel_pengeluaran"
+        android:id="@+id/btn_Cancel_pemasukan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="188dp"
@@ -139,24 +140,26 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
-        app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <Button
-        android:id="@+id/btn_Kirim_pengeluaran"
+        android:id="@+id/btn_Kirim_pemasukan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
-        android:layout_marginTop="320dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="18dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
         android:text="Kirim"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
-        app:layout_constraintStart_toStartOf="@+id/kategori_pengeluaran"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
 </androidx.constraintlayout.widget.ConstraintLayout>
