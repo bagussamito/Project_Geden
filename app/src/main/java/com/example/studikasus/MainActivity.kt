@@ -11,12 +11,10 @@ import com.example.studikasus.fragments.BerandaFragment
 import com.example.studikasus.fragments.LaporanFragment
 import com.example.studikasus.fragments.SetelanFragment
 import com.example.studikasus.fragments.adapters.ViewPagerAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_beranda.*
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
