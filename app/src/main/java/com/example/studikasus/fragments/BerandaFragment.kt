@@ -1,6 +1,5 @@
 package com.example.studikasus.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,12 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.ImageButton
 import android.widget.Toast
-import com.example.studikasus.DialogActivity
-import com.example.studikasus.LoginActivity
+import com.example.studikasus.CustomDialogFragment
 import com.example.studikasus.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_beranda.*
 
 /**
@@ -21,30 +17,71 @@ import kotlinx.android.synthetic.main.fragment_beranda.*
  */
 class BerandaFragment : Fragment() {
 
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.fab_rotate_open_anim) }
+    private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.fab_rotate_close_anim) }
+    private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.fab_from_bottom_anim) }
+    private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.fab_to_bottom_anim) }
 
-
-
+    private var clicked = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_beranda, container, false)
-
-        val option_pemasukan = view.findViewById(R.id.option_pemasukan) as ImageButton
-        option_pemasukan.setOnClickListener {
-            val i = Intent(activity, DialogActivity::class.java)
-            startActivity(i)
-        }
-        return view
+        return inflater.inflate(R.layout.fragment_beranda, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        fab_add.setOnClickListener {
+            onButtonClicked()
+        }
+        fab_pemasukan.setOnClickListener {
+            var dialog = CustomDialogFragment()
 
+        }
+        fab_pengeluaran.setOnClickListener {
+            Toast.makeText(context, "Pengeluaran", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
+    private fun onButtonClicked() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked = !clicked
+    }
 
+    private fun setAnimation(clicked: Boolean) {
+        if (!clicked) {
+            fab_pemasukan.visibility = View.VISIBLE
+            fab_pengeluaran.visibility = View.VISIBLE
+        } else {
+            fab_pemasukan.visibility = View.INVISIBLE
+            fab_pengeluaran.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if (!clicked) {
+            fab_pemasukan.startAnimation(fromBottom)
+            fab_pengeluaran.startAnimation(fromBottom)
+            fab_add.startAnimation(rotateOpen)
+        } else {
+            fab_pemasukan.startAnimation(toBottom)
+            fab_pengeluaran.startAnimation(toBottom)
+            fab_add.startAnimation(rotateClose)
+        }
+    }
+    private fun setClickable(clicked: Boolean) {
+        if (!clicked) {
+            fab_pemasukan.isClickable = false
+            fab_pengeluaran.isClickable = false
+        } else {
+            fab_pemasukan.isClickable = true
+            fab_pengeluaran.isClickable = true
+        }
+    }
 }
