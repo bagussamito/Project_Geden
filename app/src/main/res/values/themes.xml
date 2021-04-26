@@ -30,8 +30,10 @@
         <item name="background">@drawable/custom_fab</item>
     </style>
 
-    <style name="Theme.StudiKasus.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.StudiKasus.NoActionBar" parent="Theme.AppCompat.Light.Dialog">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
+
+
 </resources>

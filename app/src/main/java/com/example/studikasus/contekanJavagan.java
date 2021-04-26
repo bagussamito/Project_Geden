@@ -9,6 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
+
 public class contekanJavagan extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
@@ -21,6 +28,8 @@ public class contekanJavagan extends AppCompatActivity implements AdapterView.On
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         option_pemasukan.setAdapter(adapter);
         option_pemasukan.setOnItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -32,4 +41,5 @@ public class contekanJavagan extends AppCompatActivity implements AdapterView.On
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 }

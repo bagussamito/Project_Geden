@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.FirebaseDatabase
 
 class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -39,7 +40,7 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
             finish()
         }
         btnKirim.setOnClickListener {
-            saveData()
+            saveDataMasuk()
         }
     }
 
@@ -51,7 +52,7 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
         Toast.makeText(this, adapterView.selectedItem.toString(), Toast.LENGTH_SHORT).show()
     }
 
-    private fun saveData(){
+    private fun saveDataMasuk(){
         val nominal = etNominal.text.toString().trim()
         val deskripsi = etDeskripsi.text.toString().trim()
         val kategori = optionPemasukan.selectedItem.toString().trim()
@@ -63,7 +64,20 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
         if (deskripsi.isEmpty()){
             etDeskripsi.error = "Isi Deskripsi!"
         }
+        if (kategori.isEmpty()){
 
-        //val ref = FirebaseDatabase.getInstance().getReference("Pemasukan")
+        }
+
+        val refpemasukan = FirebaseDatabase.getInstance().getReference("Pemasukan")
+
+        val noId = refpemasukan.push().key
+
+        val Pemasukan = Pemasukan(noId,nominal,deskripsi,kategori)
+
+        if (noId != null) {
+            refpemasukan.child(noId).setValue(Pemasukan).addOnCompleteListener(){
+                Toast.makeText(applicationContext, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
