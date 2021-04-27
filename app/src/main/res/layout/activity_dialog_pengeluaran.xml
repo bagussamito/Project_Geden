@@ -33,19 +33,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_kategori_pengeluaran"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/poppins"
-        android:text="Spinner"
-        android:textColor="@color/white"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,13 +90,15 @@
         android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="60dp"
         android:entries="@array/kategori_pengeluaran"
         app:layout_constraintBottom_toTopOf="@+id/btn_Cancel_pengeluaran"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView15"
@@ -127,28 +116,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_Kirim_pengeluaran"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="276dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/color_transparan"
-        android:backgroundTint="@color/color_transparan"
-        android:text="Kirim"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
-        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
-
-    <Button
         android:id="@+id/btn_Cancel_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="188dp"
-        android:layout_marginEnd="104dp"
+        android:layout_marginEnd="92dp"
         android:layout_marginBottom="18dp"
         android:background="@color/color_transparan"
         android:backgroundTint="@color/color_transparan"
@@ -159,5 +131,23 @@
         app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.978" />
+
+    <Button
+        android:id="@+id/btn_Kirim_pengeluaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="276dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/color_transparan"
+        android:backgroundTint="@color/color_transparan"
+        android:text="Kirim"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="@+id/kategori_pemasukan"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 </androidx.constraintlayout.widget.ConstraintLayout>

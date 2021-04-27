@@ -20,7 +20,6 @@ class DialogPengeluaranActivity : AppCompatActivity(), AdapterView.OnItemSelecte
         setContentView(R.layout.activity_dialog_pengeluaran)
 
         optionPengeluaran = findViewById(R.id.kategori_pengeluaran)
-        tvkategoriPengeluaran = findViewById(R.id.tv_kategori_pengeluaran)
         etNominal = findViewById(R.id.et_nominal_pengeluaran)
         etDeskripsi = findViewById(R.id.et_deskripsi_pengeluaran)
         btnBatal = findViewById(R.id.btn_Cancel_pengeluaran)

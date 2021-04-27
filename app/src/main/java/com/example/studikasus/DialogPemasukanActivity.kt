@@ -20,7 +20,6 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
         setContentView(R.layout.activity_dialog_pemasukan)
 
         optionPemasukan = findViewById(R.id.kategori_pemasukan)
-        tvkategoriPemasukan = findViewById(R.id.tv_kategori_pemasukan)
         etNominal = findViewById(R.id.et_nominal_pemasukan)
         etDeskripsi = findViewById(R.id.et_deskripsi_pemasukan)
         btnBatal = findViewById(R.id.btn_Cancel_pemasukan)
