@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.studikasus.DaftarPemasukanActivity
 import com.example.studikasus.DialogPemasukanActivity
 import com.example.studikasus.DialogPengeluaranActivity
 import com.example.studikasus.R
@@ -27,6 +29,7 @@ class BerandaFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_beranda, container, false)
         val fabPengeluaran = view.findViewById(R.id.fab_pengeluaran) as FloatingActionButton
         val fabPemasukan = view.findViewById(R.id.fab_pemasukan) as FloatingActionButton
+        val btnOpPemasukan = view.findViewById(R.id.option_pemasukan) as ImageButton
         val jmlPemasukan = view.findViewById(R.id.jml_pemasukan) as TextView
         val jmlPengeluaran = view.findViewById(R.id.jml_pengeluaran) as TextView
         val jmlSimpanan = view.findViewById(R.id.jml_simpanan) as TextView
@@ -68,6 +71,11 @@ class BerandaFragment : Fragment() {
 
             override fun onCancelled(databaseError: DatabaseError) {}
         })
+
+        btnOpPemasukan.setOnClickListener{
+            val i = Intent(activity, DaftarPemasukanActivity::class.java)
+            startActivity(i)
+        }
 
         fabPemasukan.setOnClickListener {
             val i = Intent(activity, DialogPemasukanActivity::class.java)
