@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.studikasus.DaftarPemasukanActivity
-import com.example.studikasus.DialogPemasukanActivity
-import com.example.studikasus.DialogPengeluaranActivity
+import com.example.studikasus.*
 import com.example.studikasus.R
 import com.getbase.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
@@ -30,6 +28,7 @@ class BerandaFragment : Fragment() {
         val fabPengeluaran = view.findViewById(R.id.fab_pengeluaran) as FloatingActionButton
         val fabPemasukan = view.findViewById(R.id.fab_pemasukan) as FloatingActionButton
         val btnOpPemasukan = view.findViewById(R.id.option_pemasukan) as ImageButton
+        val btnOpPengeluaran = view.findViewById(R.id.option_pengeluaran) as ImageButton
         val jmlPemasukan = view.findViewById(R.id.jml_pemasukan) as TextView
         val jmlPengeluaran = view.findViewById(R.id.jml_pengeluaran) as TextView
         val jmlSimpanan = view.findViewById(R.id.jml_simpanan) as TextView
@@ -74,6 +73,10 @@ class BerandaFragment : Fragment() {
 
         btnOpPemasukan.setOnClickListener{
             val i = Intent(activity, DaftarPemasukanActivity::class.java)
+            startActivity(i)
+        }
+        btnOpPengeluaran.setOnClickListener{
+            val i = Intent(activity, DaftarPengeluaranActivity::class.java)
             startActivity(i)
         }
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.studikasus.fragments.adapters.AdapterPemasukan
 import com.google.firebase.database.*
 
 class DaftarPemasukanActivity : AppCompatActivity() {
@@ -36,7 +37,10 @@ class DaftarPemasukanActivity : AppCompatActivity() {
                         val masukan = pemasukanSnapshot.getValue(Item_Pemasukan::class.java)
                         pemasukanArraylist.add(masukan!!)
                     }
-                    pemasukanRecyclerview.adapter = MyAdapter(pemasukanArraylist)
+                    pemasukanRecyclerview.adapter =
+                        AdapterPemasukan(
+                            pemasukanArraylist
+                        )
                 }
             }
 

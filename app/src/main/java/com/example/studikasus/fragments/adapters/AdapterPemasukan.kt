@@ -1,19 +1,24 @@
-package com.example.studikasus
+package com.example.studikasus.fragments.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.studikasus.Item_Pemasukan
+import com.example.studikasus.R
 
-class MyAdapter (private val listPemasukan : ArrayList<Item_Pemasukan>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class AdapterPemasukan (private val listPemasukan : ArrayList<Item_Pemasukan>): RecyclerView.Adapter<AdapterPemasukan.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
-        val pemasukanView = LayoutInflater.from(parent.context).inflate(R.layout.pemasukan_item,
+        val pemasukanView = LayoutInflater.from(parent.context).inflate(
+            R.layout.pemasukan_item,
         parent, false)
-        return MyViewHolder(pemasukanView)
+        return MyViewHolder(
+            pemasukanView
+        )
     }
 
     override fun getItemCount(): Int {
