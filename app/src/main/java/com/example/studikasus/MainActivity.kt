@@ -1,14 +1,13 @@
 package com.example.studikasus
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.studikasus.fragments.BerandaFragment
-import com.example.studikasus.fragments.LaporanFragment
 import com.example.studikasus.fragments.SetelanFragment
 import com.example.studikasus.fragments.adapters.ViewPagerAdapter
 import com.google.firebase.auth.FirebaseAuth
@@ -34,14 +33,12 @@ class MainActivity : AppCompatActivity() {
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(BerandaFragment(), "Beranda")
-        adapter.addFragment(LaporanFragment(), "Laporan")
         adapter.addFragment(SetelanFragment(), "Setelan")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
         tabs.getTabAt(0)!!.setIcon(R.drawable.ic_home)
-        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_document)
-        tabs.getTabAt(2)!!.setIcon(R.drawable.ic_setting)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_setting)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

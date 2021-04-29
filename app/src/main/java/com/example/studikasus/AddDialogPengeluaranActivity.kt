@@ -1,12 +1,13 @@
 package com.example.studikasus
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.studikasus.data.Pengeluaran
 import com.google.firebase.database.FirebaseDatabase
 
-class DialogPengeluaranActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class AddDialogPengeluaranActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     lateinit var optionPengeluaran : Spinner
     lateinit var tvkategoriPengeluaran : TextView

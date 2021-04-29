@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.studikasus.data.Pemasukan
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.update_dialog_pemasukan.*
 
-class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class AddDialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     lateinit var optionPemasukan : Spinner
     lateinit var tvkategoriPemasukan : TextView
@@ -54,7 +56,7 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
     private fun saveDataMasuk(){
         val nominal = etNominal.text.toString().trim()
         val deskripsi = etDeskripsi.text.toString().trim()
-        val kategori = optionPemasukan.selectedItem.toString().trim()
+        val kategori = kategori_pemasukan.selectedItem.toString().trim()
 
         if (nominal.isEmpty()){
             etNominal.error = "Isi Nominal!"
@@ -65,7 +67,7 @@ class DialogPemasukanActivity: AppCompatActivity(), AdapterView.OnItemSelectedLi
 
         val noId = refpemasukan.push().key
 
-        val Pemasukan = Pemasukan(noId,nominal,deskripsi,kategori)
+        val Pemasukan = Pemasukan(noId, nominal, deskripsi, kategori)
 
         if (noId != null) {
             refpemasukan.child(noId).setValue(Pemasukan).addOnCompleteListener(){

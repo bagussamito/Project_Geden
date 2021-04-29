@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.studikasus.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_setelan.*
 
 /**
  * A simple [Fragment] subclass.
@@ -31,8 +29,8 @@ class SetelanFragment : Fragment() {
 
         val user = auth.currentUser
 
-        layoutPassword.visibility = View.VISIBLE
-        layoutNewPassword.visibility = View.GONE
+        //layoutPassword.visibility = View.VISIBLE
+        //layoutNewPassword.visibility = View.GONE
 
 
     }

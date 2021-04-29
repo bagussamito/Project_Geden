@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudiKasus">
         <activity android:name=".Lupa_Password_Activity"></activity>
-        <activity android:name=".DialogUpdateActivity" />
         <activity
             android:name=".DaftarPengeluaranActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -21,10 +20,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".contekanJavaActivity" />
         <activity
-            android:name=".DialogPemasukanActivity"
+            android:name=".AddDialogPemasukanActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".DialogPengeluaranActivity"
+            android:name=".AddDialogPengeluaranActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".LoginActivity"

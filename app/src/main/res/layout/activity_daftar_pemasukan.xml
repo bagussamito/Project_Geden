@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DaftarPemasukanActivity"
+    android:id="@+id/daftar_pemasukan"
     android:theme="@style/Theme.StudiKasus.NoActionBar">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/pemasukan_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

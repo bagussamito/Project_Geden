@@ -7,30 +7,92 @@
     android:background="@color/fab_pemasukan"
     android:backgroundTint="@color/fab_pemasukan"
     android:theme="@style/Theme.StudiKasus.NoActionBar"
-    tools:context=".DialogPemasukanActivity">
+    tools:context=".AddDialogPemasukanActivity">
 
-    <EditText
-        android:id="@+id/et_deskripsi_pemasukan"
-        android:layout_width="271dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_nominal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="60dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Deskripsi (Opsional)"
-        android:inputType="textMultiLine"
-        android:shadowColor="@color/white"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
+        android:layout_marginTop="64dp"
+        android:padding="16dp"
         android:textColorHint="@color/white"
-        android:textColorLink="@color/white"
-        android:textSize="14sp"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="@color/laporan"
+        app:errorTextColor="@color/laporan"
+        app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@color/white">
+
+        <EditText
+            android:id="@+id/et_nominal_pemasukan"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="60dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Isi nominal pemasukan disini"
+            android:inputType="number"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_deskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
+        android:padding="16dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="@color/laporan"
+        app:errorTextColor="@color/laporan"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_deskripsi_pemasukan"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="196dp"
+            android:layout_marginEnd="60dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Deskripsi (Opsional)"
+            android:inputType="textMultiLine"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView16"
@@ -62,28 +124,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_nominal_pemasukan"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="60dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Isi nominal pemasukan disini"
-        android:inputType="number"
-        android:shadowColor="@color/white"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorLink="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Spinner
         android:id="@+id/kategori_pemasukan"

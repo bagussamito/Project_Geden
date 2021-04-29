@@ -1,8 +1,11 @@
-package com.example.studikasus
+package com.example.studikasus.data
 
-data class Pengeluaran(
+data class Pemasukan(
         val noId : String?,
         val nominal : String,
         val deskripsi : String,
         val kategori : String
-)
+){
+    constructor(): this("","","",""){
+    }
+}

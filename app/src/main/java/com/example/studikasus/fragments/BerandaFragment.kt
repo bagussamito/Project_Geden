@@ -31,7 +31,6 @@ class BerandaFragment : Fragment() {
         val btnOpPengeluaran = view.findViewById(R.id.option_pengeluaran) as ImageButton
         val jmlPemasukan = view.findViewById(R.id.jml_pemasukan) as TextView
         val jmlPengeluaran = view.findViewById(R.id.jml_pengeluaran) as TextView
-        val jmlSimpanan = view.findViewById(R.id.jml_simpanan) as TextView
         var DBPemasukan : DatabaseReference
         var DBPengeluaran : DatabaseReference
 
@@ -81,11 +80,11 @@ class BerandaFragment : Fragment() {
         }
 
         fabPemasukan.setOnClickListener {
-            val i = Intent(activity, DialogPemasukanActivity::class.java)
+            val i = Intent(activity, AddDialogPemasukanActivity::class.java)
             startActivity(i)
         }
         fabPengeluaran.setOnClickListener {
-            val i = Intent(activity, DialogPengeluaranActivity::class.java)
+            val i = Intent(activity, AddDialogPengeluaranActivity::class.java)
             startActivity(i)
         }
         return view

@@ -7,7 +7,7 @@
     android:background="@color/fab_pengeluaran"
     android:backgroundTint="@color/fab_pengeluaran"
     android:theme="@style/Theme.StudiKasus.NoActionBar"
-    tools:context=".DialogPengeluaranActivity">
+    tools:context=".AddDialogPengeluaranActivity">
 
     <EditText
         android:id="@+id/et_deskripsi_pengeluaran"

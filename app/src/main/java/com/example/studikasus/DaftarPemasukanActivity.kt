@@ -1,59 +1,54 @@
 package com.example.studikasus
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
+import android.view.View
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.studikasus.data.Pemasukan
 import com.example.studikasus.fragments.adapters.AdapterPemasukan
 import com.google.firebase.database.*
 
-class DaftarPemasukanActivity : AppCompatActivity() {
+class DaftarPemasukanActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var dbref : DatabaseReference
-    private lateinit var pemasukanRecyclerview : RecyclerView
-    private lateinit var pemasukanArraylist : ArrayList<Item_Pemasukan>
-
+    private lateinit var ref : DatabaseReference
+    private lateinit var listPemasukan: ListView
+    private lateinit var pemasukanList: MutableList<Pemasukan>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_pemasukan)
 
-        pemasukanRecyclerview = findViewById(R.id.pemasukan_list)
-        pemasukanRecyclerview.layoutManager = LinearLayoutManager(this)
-        pemasukanRecyclerview.setHasFixedSize(true)
+        listPemasukan = findViewById(R.id.pemasukan_list)
 
+        ref = FirebaseDatabase.getInstance().getReference("Pemasukan")
 
-        pemasukanArraylist = arrayListOf()
-        getUserData()
-    }
+        pemasukanList = mutableListOf()
 
-    private fun getUserData() {
-        dbref = FirebaseDatabase.getInstance().getReference("Pemasukan")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
 
-        dbref.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
-
-                    for (pemasukanSnapshot in snapshot.children){
-
-                        val masukan = pemasukanSnapshot.getValue(Item_Pemasukan::class.java)
-                        pemasukanArraylist.add(masukan!!)
+            override fun onDataChange(p0: DataSnapshot) {
+                if(p0.exists()){
+                    pemasukanList.clear()
+                    for(h in p0.children){
+                        val pemasukan = h.getValue(Pemasukan::class.java)
+                        if (pemasukan != null) {
+                            pemasukanList.add(pemasukan)
+                        }
                     }
-                    pemasukanRecyclerview.adapter =
-                        AdapterPemasukan(
-                            pemasukanArraylist
-                        )
+
+                    val adapter = AdapterPemasukan(this@DaftarPemasukanActivity, R.layout.pemasukan_item, pemasukanList)
+                    listPemasukan.adapter = adapter
                 }
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
         })
+        }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 
 }
