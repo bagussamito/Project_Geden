@@ -11,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudiKasus">
+        <activity android:name=".Lupa_Password_Activity"></activity>
+        <activity android:name=".DialogUpdateActivity" />
         <activity
             android:name=".DaftarPengeluaranActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".DaftarPemasukanActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

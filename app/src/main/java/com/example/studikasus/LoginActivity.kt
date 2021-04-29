@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var activeFragment: Fragment
     private lateinit var auth: FirebaseAuth
     private lateinit var btnBlmPnyAkun: TextView
+    private lateinit var btnLupaPass: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         btnBlmPnyAkun = findViewById(R.id.textView3)
+        btnLupaPass = findViewById(R.id.btnLupaPas)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
@@ -55,6 +57,12 @@ class LoginActivity : AppCompatActivity() {
 
         btnBlmPnyAkun.setOnClickListener() {
             Intent(this@LoginActivity, RegisterActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        btnLupaPass.setOnClickListener(){
+            Intent(this@LoginActivity, Lupa_Password_Activity::class.java).also{
                 startActivity(it)
             }
         }

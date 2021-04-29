@@ -27,7 +27,6 @@ class DaftarPengeluaranActivity : AppCompatActivity() {
     }
 
     private fun getUserData() {
-
         dbref = FirebaseDatabase.getInstance().getReference("Pengeluaran")
 
         dbref.addValueEventListener(object : ValueEventListener {
@@ -51,4 +50,5 @@ class DaftarPengeluaranActivity : AppCompatActivity() {
             }
         })
     }
+
 }

@@ -65,7 +65,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/editicon"
+                    android:id="@+id/updateicon"
                     android:background="@drawable/btn_bg_editdelete"
                     android:layout_marginLeft="200dp"
                     android:layout_width="34dp"
@@ -73,7 +73,7 @@
                     android:src="@drawable/ic_edit" />
 
                 <ImageButton
-                    android:id="@+id/deleteicon"
+                    android:id="@+id/deleteiconmasuk"
                     android:background="@drawable/btn_bg_editdelete"
                     android:layout_marginLeft="10dp"
                     android:layout_width="34dp"

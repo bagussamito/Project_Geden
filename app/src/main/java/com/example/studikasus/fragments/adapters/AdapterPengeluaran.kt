@@ -9,7 +9,7 @@ import com.example.studikasus.Item_Pengeluaran
 import com.example.studikasus.R
 import com.example.studikasus.fragments.adapters.AdapterPengeluaran.*
 
-class AdapterPengeluaran(private val listpengeluaran : ArrayList<Item_Pengeluaran>): RecyclerView.Adapter<MyViewHolder>() {
+class AdapterPengeluaran(private val listPengeluaran : ArrayList<Item_Pengeluaran>): RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val pengeluaranView = LayoutInflater.from(parent.context).inflate(
@@ -21,22 +21,22 @@ class AdapterPengeluaran(private val listpengeluaran : ArrayList<Item_Pengeluara
     }
 
     override fun getItemCount(): Int {
-        return listpengeluaran.size
-    }
-
-
-    class  MyViewHolder(pengeluaranView : View) : RecyclerView.ViewHolder(pengeluaranView){
-
-        val kategori : TextView = pengeluaranView.findViewById(R.id.kategoritext)
-        val nominal : TextView = pengeluaranView.findViewById(R.id.totalnumber)
-        val deskripsi : TextView = pengeluaranView.findViewById(R.id.deskripsitext)
+        return listPengeluaran.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentitem = listpengeluaran[position]
+        val currentitem = listPengeluaran[position]
 
         holder.kategori.text = currentitem.kategori
         holder.nominal.text = currentitem.nominal
         holder.deskripsi.text = currentitem.deskripsi
+    }
+
+    class  MyViewHolder(pengeluaranView : View) : RecyclerView.ViewHolder(pengeluaranView){
+
+
+        val kategori : TextView = pengeluaranView.findViewById(R.id.kategoritext)
+        val nominal : TextView = pengeluaranView.findViewById(R.id.totalnumber)
+        val deskripsi : TextView = pengeluaranView.findViewById(R.id.deskripsitext)
     }
 }

@@ -1,7 +1,11 @@
 package com.example.studikasus
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studikasus.fragments.adapters.AdapterPemasukan
@@ -13,6 +17,7 @@ class DaftarPemasukanActivity : AppCompatActivity() {
     private lateinit var pemasukanRecyclerview : RecyclerView
     private lateinit var pemasukanArraylist : ArrayList<Item_Pemasukan>
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_pemasukan)
@@ -20,6 +25,7 @@ class DaftarPemasukanActivity : AppCompatActivity() {
         pemasukanRecyclerview = findViewById(R.id.pemasukan_list)
         pemasukanRecyclerview.layoutManager = LinearLayoutManager(this)
         pemasukanRecyclerview.setHasFixedSize(true)
+
 
         pemasukanArraylist = arrayListOf()
         getUserData()
@@ -49,4 +55,5 @@ class DaftarPemasukanActivity : AppCompatActivity() {
             }
         })
     }
+
 }

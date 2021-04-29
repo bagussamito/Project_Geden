@@ -51,12 +51,14 @@
         android:focusable="true" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/btnLupaPas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
         android:fontFamily="@font/poppins"
         android:paddingRight="2dp"
+        android:focusable="true"
+        android:clickable="true"
         android:text="Lupa Sandi?"
         android:textColor="#37474F"
         android:textSize="12sp"
