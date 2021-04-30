@@ -7,11 +7,26 @@
     android:backgroundTint="@color/fab_pengeluaran"
     android:theme="@style/Theme.StudiKasus.NoActionBar">
 
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="124dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nominal Pengeluaran"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_nominal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="124dp"
         android:padding="16dp"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/white"
@@ -28,7 +43,7 @@
             android:layout_width="271dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="196dp"
+            android:layout_marginTop="172dp"
             android:layout_marginEnd="60dp"
             android:autofillHints=""
             android:backgroundTint="@color/white"
@@ -49,32 +64,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="252dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Kategori"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="140dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Deskripsi (Opsional)"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,7 +83,7 @@
         android:id="@+id/input_deskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="28dp"
         android:padding="16dp"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/white"
@@ -99,7 +100,7 @@
             android:layout_width="271dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="60dp"
             android:autofillHints=""
             android:backgroundTint="@color/white"
@@ -119,32 +120,68 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="252dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Kategori"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
         android:id="@+id/kategori_pengeluaran"
         android:layout_width="271dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
         android:entries="@array/kategori_pengeluaran"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_pengeluaran"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-    <TextView
-        android:id="@+id/textView15"
+    <Button
+        android:id="@+id/btn_batal_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="124dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Nominal Pengeluaran"
+        android:layout_marginStart="188dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/color_transparan"
+        android:backgroundTint="@color/color_transparan"
+        android:text="Batal"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <Button
+        android:id="@+id/btn_update_pengeluaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="276dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/color_transparan"
+        android:backgroundTint="@color/color_transparan"
+        android:text="Update"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

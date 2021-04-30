@@ -7,10 +7,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.studikasus.data.Users
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.etEmail
-import kotlinx.android.synthetic.main.activity_register.etPassword
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -33,10 +33,10 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         btnRegister.setOnClickListener {
-            val username = etUsername.text.toString().trim()
-            val email = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
-            val verifpassword = etVerifyPassword.text.toString().trim()
+            var username = etUsername.text.toString().trim()
+            var email = etEmail.text.toString().trim()
+            var password = etPassword.text.toString().trim()
+            var verifpassword = etVerifyPassword.text.toString().trim()
 
             if (username.isEmpty()) {
                 etUsername.error = "Username harus Diisi"
@@ -64,23 +64,20 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            registerUser(email, password)
-        }
-    }
-
-    private fun registerUser( email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email,password)
-            .addOnCompleteListener(this){
-                if (it.isSuccessful){
-                    Intent(this@RegisterActivity, MainActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
+            auth.createUserWithEmailAndPassword(email,password)
+                    .addOnCompleteListener(this){
+                        if (it.isSuccessful){
+                            val user : Users = Users(username, email, password)
+                            FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().currentUser.uid).setValue(user)
+                            Intent(this@RegisterActivity, MainActivity::class.java).also {
+                                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                startActivity(it)
+                            }
+                        } else {
+                            Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                        }
                     }
-                } else {
-                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
-                }
-            }
-
+        }
     }
 
     override fun onStart() {

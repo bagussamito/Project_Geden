@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.studikasus.AddDialogPemasukanActivity
-import com.example.studikasus.DaftarPemasukanActivity
 import com.example.studikasus.LoginActivity
+import com.example.studikasus.ProfileActivity
 import com.example.studikasus.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -28,12 +27,14 @@ class SetelanFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_setelan, container, false)
         val btnLogout = view.findViewById(R.id.btnLogout) as TextView
         val btnProfile = view.findViewById(R.id.btnProfile) as TextView
-       
-
 
         btnLogout.setOnClickListener{
             auth.signOut()
             val i = Intent(activity, LoginActivity::class.java)
+            startActivity(i)
+        }
+        btnProfile.setOnClickListener{
+            val i = Intent(activity, ProfileActivity::class.java)
             startActivity(i)
         }
 

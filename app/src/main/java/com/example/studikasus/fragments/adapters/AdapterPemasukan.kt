@@ -2,9 +2,11 @@ package com.example.studikasus.fragments.adapters
 
 import android.app.AlertDialog
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.*
 import com.example.studikasus.R
 import com.example.studikasus.data.Pemasukan
@@ -44,8 +46,13 @@ class AdapterPemasukan(val mCtx : Context, val layoutResId : Int, val pemasukanL
     }
 
     private fun showUpdateDialog(pemasukan: Pemasukan) {
-        val builder = AlertDialog.Builder(mCtx)
-        builder.setTitle("Edit Data")
+        var builder = AlertDialog.Builder(mCtx)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            builder = AlertDialog.Builder(mCtx, android.R.style.Theme_Material_Dialog_Alert)
+        } else {
+            builder = AlertDialog.Builder(mCtx)
+        }
 
         val inflater = LayoutInflater.from(mCtx)
         val view = inflater.inflate(R.layout.update_dialog_pemasukan, null)
@@ -53,13 +60,15 @@ class AdapterPemasukan(val mCtx : Context, val layoutResId : Int, val pemasukanL
         val etNominal = view.findViewById<EditText>(R.id.et_nominal_pemasukan)
         val etDeskripsi = view.findViewById<EditText>(R.id.et_deskripsi_pemasukan)
         val spKategori = view.findViewById<Spinner>(R.id.kategori_pemasukan)
+        val btnBatal = view.findViewById<Button>(R.id.btn_batal_pemasukan)
+        val btnUpdate = view.findViewById<Button>(R.id.btn_update_pemasukan)
 
         etNominal.setText(pemasukan.nominal)
         etDeskripsi.setText(pemasukan.deskripsi)
 
         builder.setView(view)
 
-        builder.setPositiveButton("Update"){p0,p1 ->
+        btnUpdate.setOnClickListener{
             val dbPemasukan = FirebaseDatabase.getInstance().getReference("Pemasukan")
 
             val nominal = etNominal.text.toString().trim()
@@ -69,13 +78,13 @@ class AdapterPemasukan(val mCtx : Context, val layoutResId : Int, val pemasukanL
             if (nominal.isEmpty()){
                 etNominal.error = "Mohon nama di iisi"
                 etNominal.requestFocus()
-                return@setPositiveButton
+                return@setOnClickListener
             }
 
             if (deskripsi.isEmpty()){
                 etDeskripsi.error = "Mohon alamat diisi"
                 etDeskripsi.requestFocus()
-                return@setPositiveButton
+                return@setOnClickListener
             }
 
             val pemasukan = Pemasukan(pemasukan.noId, nominal, deskripsi, kategori)
@@ -84,10 +93,12 @@ class AdapterPemasukan(val mCtx : Context, val layoutResId : Int, val pemasukanL
 
             Toast.makeText(mCtx, "Data berhasil di update", Toast.LENGTH_SHORT).show()
         }
-        builder.setNegativeButton("Batal"){p0,p1 ->
 
-        }
         val alert = builder.create()
+        alert.window!!.requestFeature(Window.FEATURE_NO_TITLE)
         alert.show()
+        btnBatal.setOnClickListener{
+            alert.dismiss()
+        }
     }
 }

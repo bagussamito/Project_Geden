@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudiKasus">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".Lupa_Password_Activity" />
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".ProfileActivity"></activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".Lupa_Password_Activity" />
         <activity
             android:name=".DaftarPengeluaranActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -22,10 +26,10 @@
         <activity android:name=".contekanJavaActivity" />
         <activity
             android:name=".AddDialogPemasukanActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+            android:theme="@style/Theme.StudiKasus.NoActionBar" />
         <activity
             android:name=".AddDialogPengeluaranActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+            android:theme="@style/Theme.StudiKasus.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
